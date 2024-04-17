@@ -1,16 +1,18 @@
 <template>
-    <CardComponents v-for="(film, i) in store.films" :key="film.id" :item="film" />
-    <CardComponents v-for="(serie, i) in store.seriesTV" :key="serie.id" :serie="serie" />
+    <h2>FILM</h2>
+    <CardComponent v-for="(film, i) in store.films" :key="film.id" :item="film" />
+    <h2>SERIE TV</h2>
+    <CardComponent v-for="(serie, i) in store.seriesTv" :key="serie.id" :item="serie" />
     
 </template>
 
 <script>
-import CardComponents from './CardComponents.vue';
+import CardComponent from './CardComponent.vue';
 import store from '../store.js'
 
 export default {
     components: {
-        CardComponents,
+        CardComponent,
     },
     data() {
         return {

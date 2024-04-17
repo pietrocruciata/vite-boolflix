@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import CardComponents from './CardComponents.vue'
+import CardComponent from './CardComponent.vue'
 import store from '../store.js'
 import axios from 'axios'
 export default {
     components: {
-        CardComponents
+        CardComponent
     },
     data() {
         return {
@@ -62,8 +62,8 @@ export default {
                     this.store.seriesTv = []
                     for (let i = 0; i < res.data.results.length; i++) {
                         const element = res.data.results
-                        const title = element[i].title
-                        const titleOriginal = element[i].original_title
+                        const title = element[i].name
+                        const titleOriginal = element[i].original_name
                         const vote = element[i].vote_average
                         const language = element[i].original_language
                         const image = element[i].poster_path
