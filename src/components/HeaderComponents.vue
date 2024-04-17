@@ -1,7 +1,8 @@
 <template>
     <div>
-        <input type="text" v-model="this.store.query">
-        <button @click="elementsFilm()">cerca</button>
+        <input type="text" v-model="this.store.query" @keyup.enter="boothElements()"
+            placeholder="Cerca un film o serie TV">
+        <button @click="boothElements()">cerca</button>
 
     </div>
 </template>
@@ -28,11 +29,11 @@ export default {
                 params: {
                     api_key: this.store.API_KEY,
                     query: this.store.query,
-                    language: 'it-IT',
+                   
 
                 }
             }).then((res) => {
-
+                this.store.films = []
                 console.log(res.data);
                 for (let i = 0; i < res.data.results.length; i++) {
                     const element = res.data.results
@@ -54,11 +55,10 @@ export default {
                     params: {
                         api_key: this.store.API_KEY,
                         query: this.store.query,
-                        language: 'it-IT',
+                        
                     }
                 }).then((res) => {
-
-                    console.log(res.data);
+                    this.store.seriesTv = []
                     for (let i = 0; i < res.data.results.length; i++) {
                         const element = res.data.results
                         const title = element[i].title
@@ -69,15 +69,21 @@ export default {
                         this.store.seriesTv.push({
                             title, titleOriginal, vote, language
                         })
+
                     }
                 })
         },
 
+        boothElements(){
+            this.elementsFilm()
+            this.elementsTv()
+        }
+
     },
 
     created() {
-    console.log(this.store.films);
-}
+        console.log(this.store.films);
+    }
 
 }
 

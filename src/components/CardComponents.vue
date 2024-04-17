@@ -1,11 +1,16 @@
 <template>
   <div>
     <ul>
-      <li>{{ film.titleOriginal }}</li>
-      <li>{{ film.title }}</li>
-      <li>{{ film.vote }}</li>
-      <li :class="film.language" ><img :src="this.store.flags" alt=""></li>
-
+      <li>
+        <h4>{{ item.titleOriginal }}</h4>
+        <h4>{{ item.title }}</h4>
+        <h4>{{ item.vote }}</h4>
+        <img :src="` /img/${item.language}.png `" alt="" class="image-size">
+        <p>
+          <font-awesome-icon :icon="['fas', 'star']" />
+          <font-awesome-icon :icon="['far', 'star']" />
+        </p>
+      </li>
     </ul>
   </div>
 </template>
@@ -16,36 +21,21 @@ export default {
   data() {
     return {
       store,
-     
+      flags:'',
     }
   },
   props: {
-    film: {
+    item: {
       type: Object
     }
   },
-  methods: {
-
-    flags() {
-      
-      if (this.store.films.language === 'en') {
-        this.store.flags = '/public/en.png'
-      } 
-      // return this.store.flags  
-    }
-  }
+ 
 
 }
 </script>
 
 <style lang="scss" scoped>
-.en {
-
-  // background-image: url(https://www.squillanteuniformi.it/18075-medium_default/bandiera-in-polynautico-nazioni-150-x-225.jpg);
-
-}
-
-.it {
-  // background: yellow;
+.image-size{
+  width: 40px;
 }
 </style>
