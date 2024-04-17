@@ -1,6 +1,6 @@
 <template>
     <CardComponents v-for="(film, i) in store.films" :key="film.id" :item="film" />
-    <CardComponents v-for="(serie, i) in store.seiriesTV" :key="serie.id" :item="serie" />
+    <CardComponents v-for="(serie, i) in store.seriesTV" :key="serie.id" :serie="serie" />
     
 </template>
 

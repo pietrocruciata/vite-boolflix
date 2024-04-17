@@ -29,7 +29,7 @@ export default {
                 params: {
                     api_key: this.store.API_KEY,
                     query: this.store.query,
-                   
+
 
                 }
             }).then((res) => {
@@ -41,9 +41,10 @@ export default {
                     const titleOriginal = element[i].original_title
                     const vote = element[i].vote_average
                     const language = element[i].original_language
+                    const image = element[i].poster_path
 
                     this.store.films.push({
-                        title, titleOriginal, vote, language
+                        title, titleOriginal, vote, language, image
                     })
                 }
             })
@@ -55,7 +56,7 @@ export default {
                     params: {
                         api_key: this.store.API_KEY,
                         query: this.store.query,
-                        
+
                     }
                 }).then((res) => {
                     this.store.seriesTv = []
@@ -65,16 +66,18 @@ export default {
                         const titleOriginal = element[i].original_title
                         const vote = element[i].vote_average
                         const language = element[i].original_language
+                        const image = element[i].poster_path
+
 
                         this.store.seriesTv.push({
-                            title, titleOriginal, vote, language
+                            title, titleOriginal, vote, language, image
                         })
 
                     }
                 })
         },
 
-        boothElements(){
+        boothElements() {
             this.elementsFilm()
             this.elementsTv()
         }
