@@ -1,9 +1,13 @@
 <template>
-    <h2>FILM</h2>
-    <CardComponent v-for="(film, i) in store.films" :key="film.id" :item="film" />
-    <h2>SERIE TV</h2>
-    <CardComponent v-for="(serie, i) in store.seriesTv" :key="serie.id" :item="serie" />
-    
+    <div class="container">
+        <div class="d-flex">
+            <CardComponent v-for="(film, i) in store.films" :key="film.id" :item="film" />
+            <CardComponent v-for="(serie, i) in store.seriesTv" :key="serie.id" :item="serie" />
+        </div>
+    </div>
+
+
+
 </template>
 
 <script>
@@ -23,4 +27,6 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../style/general'
+</style>

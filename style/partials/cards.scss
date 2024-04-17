@@ -1,0 +1,32 @@
+.position-relative {
+    position: relative;
+}
+
+
+.img-first {
+    display: block;
+}
+
+.card-description {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: black;
+    flex-shrink: 0;
+    overflow: auto;
+}
+
+.d-none {
+    display: none;
+}
+
+
+.card:hover .d-none {
+    display: block;
+}
+
+.card:hover .img-first {
+    display: none;
+}
+
+
