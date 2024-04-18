@@ -14,19 +14,19 @@
     background-color: black;
     flex-shrink: 0;
     overflow: auto;
+    position: absolute;
+    width: 342px;
+    opacity: 0;
+    top: 0;
+    height: 513px;
+    padding: 10px;
+    gap: 15px;
 }
 
-.d-none {
-    display: none;
-}
-
-
-.card:hover .d-none {
-    display: block;
+.card:hover .card-description {
+    opacity: 1;
 }
 
 .card:hover .img-first {
-    display: none;
+    opacity: 0;
 }
-
-

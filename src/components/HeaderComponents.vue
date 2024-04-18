@@ -1,19 +1,34 @@
 <template>
     <div class="bg-black">
         <div class="container ">
-            <h1 class="c-red">BOOLFLIX</h1>
-        <div class="d-flex gap-20">
-            <input type="text" v-model="this.store.query" @keyup.enter="boothElements()"
-            placeholder="Cerca un film o serie TV">
-        <button @click="boothElements()">cerca</button> 
+            <img src="/img/netflix.png" alt="" class="logo-size">
+            <a href="">Home</a>
+            <a href="">Film</a>
+            <a href="">Serie tv</a>
+            <a href="">Original</a>
+            <a href="">Scelti per te</a>
+            <div>
+                <select name="categories" id="">
+                    <option value="">categoria</option>
+                    <option value="">commedia</option>
+                    <option value="">azione</option>
+                    <option value="">drammatico</option>
+                    <option value="">thriller</option>
+                    <option value="">horror</option>
+                </select>
+            </div>
+            <div class="d-flex gap-20">
+                <input type="text" v-model="this.store.query" @keyup.enter="boothElements()"
+                    placeholder="Cerca un film o serie TV" class="p-5">
+                <button @click="boothElements()">cerca</button>
+            </div>
         </div>
-        </div>
-       
-       
-    </div>
-     
 
-    
+
+    </div>
+
+
+
 </template>
 
 <script>
@@ -106,5 +121,4 @@ export default {
 
 <style lang="scss" scoped>
 @use '../style/general'
-
 </style>

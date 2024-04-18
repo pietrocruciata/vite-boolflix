@@ -1,4 +1,4 @@
-.container{
+.container {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -7,15 +7,37 @@
     padding: 20px;
     gap: 20px;
 }
+
+.container-central {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    min-height: 614px;
+}
+
 .image-size {
     width: 40px;
-  }
+}
 
-.d-flex{
+.d-flex {
     display: flex;
     flex-wrap: wrap;
 }
 
-.gap-20{
-   gap: 20px; 
+.gap-20 {
+    gap: 20px;
+}
+
+.logo-size {
+    width: 150px;
+}
+
+input,
+select,
+option {
+    padding: 5px;
 }
