@@ -7,4 +7,6 @@ const store = reactive({
     query: ''
 });
 
+
+
 export default store

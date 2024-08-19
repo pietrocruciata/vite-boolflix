@@ -1,7 +1,7 @@
 <template>
     <div class="bg-black">
         <div class="container ">
-            <img src="/img/netflix.png" alt="" class="logo-size">
+            <!-- <img src="/public/img/netflix" alt="" class="logo-size"> -->
             <a href="">Home</a>
             <a href="">Film</a>
             <a href="">Serie tv</a>
